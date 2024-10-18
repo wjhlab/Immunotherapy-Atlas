@@ -225,3 +225,14 @@ saveRDS(seurat_obj,"sobj13108pubID_6w_wUmap.rds")
 wjh <- readRDS("E:/WJHLab/cytofAtlas/updated_data/J13108/backup_output.rds")
 
 
+library(Seurat)
+library(sceasy)
+library(zellkonverter)
+library(anndataR)
+library(reticulate)
+# data is a Seurat object
+setwd("E:/WJHLab/cytofAtlas/updated_data/J1790_PBMC/Tcell_Stim/Tcell_Stim/finalrun_revised")
+
+Seur <- readRDS("sobj1790TSpubID_4w_wUmap.rds")
+sceasy::convertFormat(seurat_obj, from="seurat", to="anndata",
+                      outFile='sobj13108pubID_6w_wUmap.h5ad')
